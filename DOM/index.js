@@ -1,0 +1,1 @@
+let alphonse = document.querySelector(".elric")

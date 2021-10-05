@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Conteudo DOM: </h1>
+        <div id="test">getElementbyId</div>
+        <div class="test">
+            <span>getElementsByClassName</span>
+        </div>
+        <teste />
+        <div id="query-test">querySelector</div>
+        <div class="query-test"></div>
+        <br>
+        <main class="manipulation">
+            <h3 class="manipulation">gostaria de um teste por favor!!! Aqui a baixo, bele?</h3>
+            <div id="manipulation-one">não mudei ainda</div>
+            <div id="manipulation-two">ainda quero mudar</div>
+        </main>
+        <main class="prototipo-para-teste">
+            <input id="elric" type="text">
+        </main>
+    </body>
+    <script scr="./index.js">
+        // ? parte básica de visualização de html pela DOM
+        document.querySelectorAll("div").forEach(div => {
+            console.log(div)
+        })
+
+        // ? manipulação de texto/string pela DOM
+        function manipulationOne() {
+            let manipulation_one = document.querySelector("#manipulation-one")
+            manipulation_one.innerText = "algo mudou"
+
+            console.log(`o que te dentro do texto é: ${manipulation_one.innerText}`)
+        }
+
+        // ? manipulação de HTML pela DOM
+        function manipulationTwo() {
+            let manipulation_two = document.querySelector("#manipulation-two")
+            manipulation_two.innerHTML = "<h1>já mudou meu fi</h1>"
+
+            console.log(`o que te dentro do HTML é: ${manipulation_two.innerHTML}`)
+
+            //manipulação de estilo CSS
+            manipulation_two.style.backgroundColor = "#222"
+        }
+
+        manipulationOne()
+        manipulationTwo()
+    </script>
+</html>
